@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
   def          test
             x = 5
       b = 3
+    c = 'TEST'
 
       {
-        a => Time.now == 1&.day.from_now || 5 == 3 || (1.100_000_000).sample == 10
+        a => Time.now == 1&.day.from_now || 5 == 3 || (1..100_000_000).sample == 10
       }
   end
 end

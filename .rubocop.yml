@@ -1,0 +1,99 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: '3.3.0'
+  Exclude:
+    - 'schema.rb'
+    - 'db/schema.rb'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'Dangerfile'
+  DisplayStyleGuide: true
+  ExtraDetails: true
+
+Rails:
+  Enabled: true
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+Rails/FilePath:
+  Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
+Rails/InverseOf:
+  Enabled: false
+Rails/UnknownEnv:
+  Enabled: false
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Layout/LineLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ClassLength:
+  # Refactoring Classes into another file
+  # does not always make it easier to navigate
+  Enabled: false
+  # Exclude:
+  #   - 'app/mailers/**/*.rb'
+Metrics/CyclomaticComplexity:
+  Max: 8
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/FloatDivision:
+  Enabled: false
+Style/LambdaCall:
+  Enabled: false
+Style/BlockDelimiters:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/MixinGrouping:
+  Enabled: false
+Style/MixinUsage:
+  Exclude:
+    - 'lib/tasks/**/*'
+Style/AndOr:
+  Exclude:
+    - 'app/controllers/**/*.rb'
+Style/AsciiComments:
+  Enabled: false
+Style/NumericLiteralPrefix:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: required
+Naming/AccessorMethodName:
+  Enabled: false
+Naming/VariableNumber:
+  Enabled: false
+
+# Does not make sense
+# Raises error for
+# @user&.is_null || @user.then_do_that
+Lint/SafeNavigationConsistency:
+  Enabled: false
